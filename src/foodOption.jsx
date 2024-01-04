@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function FoodOption(props){
     // deconctruct the props
-    const { value, upvoteFunc, currVote } = props;
+    const { value, upvoteFunc, currVote, user_id } = props;
 
     // declare state var to tell if this box is checked
     const [isChecked, setIsChecked] = useState(false);
@@ -29,9 +29,9 @@ export default function FoodOption(props){
         upvoteFunc(value);
         
         fetch('http://localhost:3000/api/cuisines', {
-        method: 'POST',
+        method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ cuisine: value }),
+        body: JSON.stringify({ user_id, cuisine_choice: value }),
         //value being passed in is the cuisine that the user selects from UI (ie. Japanese, Mexican, Thai, Korean, etc.)
     })
         .then((data) => data.json())

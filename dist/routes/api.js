@@ -19,7 +19,7 @@ router.get('/cuisines', controller.getCuisines, (req, res) => {
     return res.status(200).json(res.locals.cuisines)
 })
 
-router.post('/cuisines', controller.addCuisines, (req, res) => {
+router.patch('/cuisines', controller.updateCuisines, (req, res) => {
     return res.status(200).json(res.locals.addedCuisines)
 })
 
@@ -35,20 +35,5 @@ router.get('/tally', controller.tally, (req, res) => {
     return res.status(200).json(res.locals.tally)
 })
 
-router.get('/cuisines', controller.getCuisines, (req, res) => {
-    res.status(200).json(res.locals.cuisines)
-})
-
-router.post('/cuisines', controller.addCuisines, (req, res) => {
-    res.status(200).json(res.locals.addedCuisines)
-})
-
-router.get('/people', controller.getPeople, (req, res) => {
-    res.status(200).json(res.locals.people)
-})
-
-router.post('/people', controller.addPeople, (req, res) => {
-    res.status(200).json(res.locals.addPeople)
-})
 
 module.exports = router;
