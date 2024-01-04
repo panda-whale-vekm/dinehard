@@ -7,13 +7,14 @@ import ListContainer from "./listContainer";
 class App extends React.Component {
   render() {
     return (
-      <>
-        <h1>
-          DINE HARD
-        </h1>
-        <h4>choose wisely...</h4>
-        <ListContainer />
-      </>
+      <div className='body'>
+          <h1 className='header'>
+            DINE HARD
+          </h1>
+        <div className='optionsContainer'>
+          <ListContainer/>
+        </div>
+      </div>
     );
   };
 };

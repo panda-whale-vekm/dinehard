@@ -1,24 +1,107 @@
+.header {
+  /* background-image: url('https://media4.giphy.com/media/VD5ih6qoMsz0UsZPpF/200w.webp?cid=ecf05e47juwq1ep1ir2mo12zxbvg6ssoajfbpegv1xpicnm5&ep=v1_stickers_search&rid=200w.webp&ct=s'); */
+  background-color: rgba(116, 202, 120, 0.95);
+  color: rgb(0, 0, 0);
+  margin-top: auto;
+  padding: 0.5em;
+  margin: auto;
+  margin-top: 2em;
+  border-radius: 2em;
+  border-style: solid;
+  text-align: center;
+  font-family: Cute Font;
+}
+
+@font-face {
+  font-family: 'Cute Font';
+  src: url(https://fonts.googleapis.com/css?family=Cute+Font);
+}
+
 h1 {
-    color: burlywood;
+    color: rgb(0, 0, 0);
     -webkit-text-stroke-width: .05rem;
-    -webkit-text-stroke-color: aquamarine;
+  }
+
+h4 {
+  font-size: 25px;
+}
+
+h5 {
+  margin-left: 1.5em;
   }
 
 body {
-  background-color: mintcream;
-  }
-
-  #listContainer {
-    border: 1px solid blueviolet;
+  background-color: rgb(247, 78, 78);
+  /* background-image: url('https://i.giphy.com/3o7btUDtnx3gTwIlmo.webp'); */
+  background-image: url('https://static.vecteezy.com/system/resources/previews/003/485/651/non_2x/fast-food-junk-food-elements-background-vector.jpg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+  /* #listContainer {
+    border: 1px solid rgb(255, 255, 255);
     display: block;
+    width: 100%;
+    background-image: url('https://i.giphy.com/0KiLnOipDAnfk5Jgsf.webp');
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
 
-  }
+  } */
 
 li {
-  display: inline-flex;
+  /* display: inline-flex; */
 }
 
 input {
   display: flexbox;
   color: red;
+}
+
+.optionsContainer {
+  display: flex;
+  justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 0.95);
+  background-image: url('https://i.giphy.com/0KiLnOipDAnfk5Jgsf.webp');
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+  color: black;
+  width: 50em;
+  padding: 1em;
+  border-radius: 2em;
+  border-style: solid;
+  margin-top: 1em;
+  font-family: Cute Font;
+}
+
+
+.foodOption {
+  font-size: 40px;
+}
+
+.box {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.box:checked {
+  background-color: rgba(116, 202, 120, 0.95);
+  border-color: black
+}
+
+.list {
+  list-style: none;
+  counter-reset: my-counter;
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
 }

@@ -10,26 +10,26 @@ export default function FoodOption(props){
     // event handler for when a box is checked
         // update isChecked value
     const handleCheck = (e) => {
-       setIsChecked(!isChecked);
+       setIsChecked(e.target.checked);
         // if it was not checked, tell the parent element it is checked now
-       if(!isChecked){
+       if(e.target.checked){
         voteFunc(value)
-       } else {
-        voteFunc('nobody yet');
        }
    }
 
     return (
         <div className="foodOption">
-            <input type="checkbox"
+            <input className="box"
+                type="checkbox"
                 key={value}
-                checked={isChecked}
+                checked={currVote === value}
                 onChange={handleCheck}
             />
+
             
                 {value}
-
-            <h5>{isChecked ? "yes this one is checked" : "no this one is not checked"}</h5>
+{/* 
+            <h5>{isChecked ? "yes this one is checked" : "no this one is not checked"}</h5> */}
 
             </div>
     )

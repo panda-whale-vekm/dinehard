@@ -1,7 +1,7 @@
 // Import any necessary modules or dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
-const db = require('../dist/Models/Models.js');
+const db = require('./dist/Models/Models.js');
 
 
 // Create a controller object
