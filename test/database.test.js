@@ -51,7 +51,7 @@ describe('Postgres DB Connection', () => {
   it(`Should insert a user`, async () => {
     const firstname = 'Mayson';
     
-    //insert and fetch the user
+    //Insert and fetch the user
     await pool.query('INSERT INTO testUsers (firstname) VALUES ($1)', [firstname]);
     const res = await pool.query('SELECT * FROM testUsers WHERE firstname = $1', [firstname]);
     expect(res.rows[0].firstname).toBe(firstname);
@@ -65,7 +65,7 @@ describe('Postgres DB Connection', () => {
 
   it(`Should delete a user`, async () => {
     const firstname = 'Mayson';
-    //delete the user
+    //Delete the user
     await pool.query('DELETE FROM testUsers WHERE firstname = $1', [firstname]);
     const res = await pool.query('SELECT * FROM testUsers WHERE firstName = $1', [firstname]);
     expect(res.rows.length).toBe(0);
