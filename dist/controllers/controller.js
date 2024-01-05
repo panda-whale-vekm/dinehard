@@ -9,7 +9,6 @@ const controller = {};
 
 controller.getCuisines = async (req, res, next) => {
     try {
-        // const result = await db.query('SELECT user_id FROM users')
         const text = `SELECT cuisine_choice FROM users`;
         const result = await db.query(text);
         res.locals.cuisines = result.rows;
@@ -51,38 +50,20 @@ controller.getPeople = async (req,res,next) => {
 
 controller.addPeople = async (req, res, next) => {
     const { name } = req.body;
-    // console.log('name:', name);
     try {
      const text = `INSERT INTO users (name) VALUES ($1)`;
      const params = [ name ];
      await db.query(text, params);
      const data = await db.query(`SELECT user_id FROM users WHERE name=$1`, params)
-     res.locals.addPeople = data.rows[0].user_id
+     res.locals.addPeople = data.rows[0].user_id;
      console.log(res.locals.addPeople)  
      return next();
     } catch (err) {
         console.log('error in addPeople middleware');
         return next(err)
     }
-    // console.log('params:', params);
-    // db.query(text, params)
-    // .then((data) => {
-    //     console.log('data:', data);
-    //     res.locals.people = data
-    // })
-    // .then(() => next())
-    // .catch((err) => {
-    //     console.log('error cause in addPeople middleware');
-    //     return next(err);
-    // })
 
 }
-
-
-// controller.addCuisines = async (req, res, next) => {
-//     console.log('req.body:', req.body);
-//     const { cuisine } = req.body;
-// }
   
 controller.tally = async (req, res, next) => {
     try {
@@ -97,13 +78,6 @@ controller.tally = async (req, res, next) => {
     }
 }
 
-
-
-
-// Define your controller methods
-controller.methodName = (req, res) => {
-  // Code logic goes here
-};
 
 // Export the controller object
 module.exports = controller;
