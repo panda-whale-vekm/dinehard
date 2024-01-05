@@ -3,7 +3,6 @@ import ListContainer from "./listContainer";
 
 
 // main app component holds the logo and the list container component
-
 function App(){
 
   const [ user_id, setUser_id ] = useState()
@@ -17,7 +16,6 @@ function App(){
   }
   const handleClick = async (name) => {
     try {
-      // console.log(name)
       const response = await fetch('http://localhost:3000/api/people', {
         method: 'POST',
         headers: {
