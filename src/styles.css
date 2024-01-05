@@ -134,17 +134,3 @@ input {
 .cuisineButton:hover {
   background-color: #4CAF50;
 }
-
-.dropDown {
-  background-color: #ff99cc; 
-  color: white;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.dropDown:hover, .dropDown:focus {
-  background-color: #ff66b3; 
-}
